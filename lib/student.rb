@@ -3,7 +3,7 @@ require_relative "../config/environment.rb"
 class Student
 attr_accessor :id, :name, :grade
 
-  def initialize(name, grade, id =nil)
+  def initialize(id =nil, name, grade)
     @name = name
     @grade = grade
   end
@@ -56,7 +56,14 @@ attr_accessor :id, :name, :grade
   end
 
   def self.find_by_name(name)
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE name  = ?
+    SQL
 
+    result = DB[:conn].execute(sql, self.name)[0]
+    Student.new =()
   end
 
   # Remember, you can access your database connection anywhere in this class
