@@ -21,7 +21,7 @@ attr_accessor :id, :name, :grade
 
   def self.drop_table
     sql = <<-SQL
-      DROP TABLE students
+      DROP TABLE IF EXISTS students
     SQL
   end
 
