@@ -26,7 +26,7 @@ attr_accessor :id, :name, :grade
     DB[:conn].execute(sql)
   end
 
-  def self.save
+  def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
       VALUES (?, ?)
