@@ -23,6 +23,7 @@ attr_accessor :id, :name, :grade
     sql = <<-SQL
       DROP TABLE IF EXISTS students
     SQL
+    DB[:conn].execute(sql)
   end
 
 
