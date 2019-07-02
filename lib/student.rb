@@ -63,7 +63,7 @@ attr_accessor :id, :name, :grade
     SQL
 
     result = DB[:conn].execute(sql, self.name)[0]
-    Student.new =()
+    Student.new =(result[0], result[1], result[2])
   end
 
   # Remember, you can access your database connection anywhere in this class
