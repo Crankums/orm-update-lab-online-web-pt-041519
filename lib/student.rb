@@ -14,7 +14,7 @@ attr_accessor :id, :name, :grade
       id INTEGER PRIMARY KEY,
       name TEXT,
       grade INTEGER
-      )    
+      )
     SQL
 
     DB[:conn].execute(sql)
