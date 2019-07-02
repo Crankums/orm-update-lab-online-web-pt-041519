@@ -16,7 +16,6 @@ attr_accessor :id, :name, :grade
       grade INTEGER
       )
     SQL
-
     DB[:conn].execute(sql)
   end
 
